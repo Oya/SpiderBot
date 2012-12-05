@@ -85,7 +85,7 @@ namespace Robotinic_2._0
 
             var tempoFinal = DateTime.Now;
 
-            Console.WriteLine("De " + tempoInicial.ToShortTimeString() + " até " + tempoFinal.ToShortTimeString());
+            Console.WriteLine("De " + tempoInicial.ToShortTimeString());
         }
 
     }
@@ -184,7 +184,7 @@ namespace Robotinic_2._0
                 PopulaListaPrincipal(url);
                 url = listaPrincipal.ReadNext();
             }
-           
+            Console.WriteLine("Até " + DateTime.Now.ToShortTimeString());
         }
     }
 
