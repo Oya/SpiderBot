@@ -101,7 +101,7 @@ namespace Robotinic_2._0
 
         public Spider(string name)
         {
-            root = "http://memoria.petrobras.com.br/";
+            root = "http://www.uol.com.br/";
             currentThreadName = name;
             Console.WriteLine(currentThreadName);
         }
@@ -153,11 +153,12 @@ namespace Robotinic_2._0
                 {
                     string novo = m.Groups[1].ToString().ToLower();
 
-                    if (!novo.Contains("#")
-                        && !novo.Contains("javascript:void(0);")
+                    if (novo.Contains('#'))
+                            novo = novo.Split('#')[0];
+
+                    if (!novo.Contains("javascript:void(0);")
                         && !string.IsNullOrWhiteSpace(novo)
-                        && novo != "/"
-                        && !novo.Contains("http")
+                        && novo.Length > 1
                         && !listaPrincipal.Contains(novo)
                         && novo[novo.Length - 4] != '.')
                     {
