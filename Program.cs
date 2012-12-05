@@ -178,13 +178,10 @@ namespace Robotinic_2._0
 
         public void AcessarLinks(string url)
         {
-            
-            PopulaListaPrincipal(url);
-            url = listaPrincipal.ReadNext();
             while (!string.IsNullOrWhiteSpace(url))
             {
                 Console.WriteLine(currentThreadName + ": (" + Cached +"/"+listaPrincipal.Count() + ") " + url);
-                AcessarLinks(url);
+                PopulaListaPrincipal(url);
                 url = listaPrincipal.ReadNext();
             }
            
