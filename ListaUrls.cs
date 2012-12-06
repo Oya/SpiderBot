@@ -23,14 +23,14 @@ namespace Robotinic_2._0
 
         public bool Contains(string key)
         {
-            //cacheLock.EnterReadLock();
+            cacheLock.EnterReadLock();
             try
             {
                 return innerCache.ContainsKey(key);
             }
             finally
             {
-                //cacheLock.ExitReadLock();
+                cacheLock.ExitReadLock();
             }
         }
 
